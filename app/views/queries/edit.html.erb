@@ -1,6 +1,11 @@
-<h1>Editing Query</h1>
-
-<%= render 'form', query: @query %>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h4>Edit Query</h4>
+  </div>
+  <div class="panel-body">
+    <%= render 'form', query: @query %>
+  </div>
+</div>
 
 <%= link_to 'Show', @query %> |
 <%= link_to 'Back', queries_path %>

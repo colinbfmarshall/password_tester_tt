@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 20161211163340) do
 
   create_table "queries", force: :cascade do |t|
     t.string   "password"
-    t.string   "result"
+    t.float    "result"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
