@@ -16,9 +16,14 @@
       <%= @query.result %> seconds
     </p>
     <p>
+      <strong>How many guesses:</strong>
+      <%= @query.result * 10000000000 %>
+    </p>
+    <p>
       <strong>How long roughly:</strong>
       <%= distance_of_time_in_words(@query.result, 0, include_seconds: true) %>
     </p>
+    <hr>
     <%= link_to 'Edit', edit_query_path(@query), class:'btn btn-default' %>
   </div>
   

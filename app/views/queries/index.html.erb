@@ -5,7 +5,17 @@
   </div>
   <div class="panel-body">
     <p>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi quis velit augue. Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+    A web app that collects a user's password and returns how long it would take to brute force.
+    <br><br>
+    We assume a desktop computer can make 10 billion password guesses per second.
+    <br><br>
+    We assume there are: 
+    <br>
+    <ul>
+      <li>52 letters</li>
+      <li>10 numbers</li>
+      <li>33 ascii special characters</li>
+    </ul>
     </p>
     <%= link_to 'New Query', new_query_path, class:'btn btn-default pull-right' %>
   </div>
@@ -15,7 +25,7 @@
     <thead>
       <tr>
         <th>Password</th>
-        <th>Result</th>
+        <th>Result (seconds)</th>
         <th>Roughly how long?</th>
         <th colspan="3"></th>
       </tr>
