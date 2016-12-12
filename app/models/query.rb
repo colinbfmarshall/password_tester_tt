@@ -1,14 +1,15 @@
 class Query < ApplicationRecord
   validates :password, presence: true
-  after_commit :lets_try
+  after_commit :lets_try, on: [:create, :update]
 
   def lets_try
 
       lower_case = ('a'..'z').to_a
       upper_case = lower_case.map(&:upcase)
       numbers = ('0'..'9').to_a
-      #using q instead of quotation mark
-      characters = "!@#$%^&*()-_=+[{ ]};:'\|`~,<.>/?q ".chars.to_a 
+      characters = "!@#$%^&*()-_=+[{ ]};:'\|`~,<.>/? ".chars.to_a 
+      characters << '"'
+
 
       options = [lower_case, upper_case, numbers, characters]
 
