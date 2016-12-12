@@ -1,14 +1,25 @@
-<p id="notice"><%= notice %></p>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h4>
+      How secure is my password?
+      <%= link_to 'Back', queries_path, class:'pull-right' %>
+    </h4>
+  </div>
+  <div class="panel-body">
+    <p>
+      <strong>Password:</strong>
+      <%= @query.password %>
+    </p>
 
-<p>
-  <strong>Password:</strong>
-  <%= @query.password %>
-</p>
-
-<p>
-  <strong>Result:</strong>
-  <%= @query.result %>
-</p>
-
-<%= link_to 'Edit', edit_query_path(@query) %> |
-<%= link_to 'Back', queries_path %>
+    <p>
+      <strong>Result:</strong>
+      <%= @query.result %> seconds
+    </p>
+    <p>
+      <strong>How long roughly:</strong>
+      <%= distance_of_time_in_words(@query.result, 0, include_seconds: true) %>
+    </p>
+    <%= link_to 'Edit', edit_query_path(@query), class:'btn btn-default' %>
+  </div>
+  
+</div>
