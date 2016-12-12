@@ -1,9 +1,9 @@
 class Query < ApplicationRecord
   validates :password, presence: true
-  after_save :lets_try
+  after_commit :lets_try
 
   def lets_try
-    if self.result.blank?
+
       lower_case = ('a'..'z').to_a
       upper_case = lower_case.map(&:upcase)
       numbers = ('0'..'9').to_a
@@ -23,8 +23,8 @@ class Query < ApplicationRecord
 
       how_long_in_seconds = total_guesses.to_f / ten_billion
 
-      self.update_attribute(:result, how_long_in_seconds)
-      end
+      self.update_column(:result, how_long_in_seconds)
+
     end
 
 end
